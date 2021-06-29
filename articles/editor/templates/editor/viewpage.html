@@ -1,0 +1,15 @@
+{% extends 'editor/layout.html' %}
+
+{% block body %}
+    <nav class="nav" id="navbar">
+        <a class="nav-link" style="color: gray;" href="{% url 'editor:home' %}">Home</a>
+        <a class="nav-link active" href="{% url 'editor:home' %}">Post {{ post.id }}</a>
+    </nav>    
+    <div style="padding:15px; padding-top: 50px; background-color: white;">
+        <h1 class="posttitle">{{ post.title }}</h1>
+        <h6 class="postauthor" style="margin-bottom: 50px;">Written by {{post.author}}</h6>
+        <p class="postcontent" style="font-size: 15px;">{{post.content}}</p>
+        <h4 class="postauthor">Written by: {{post.author}}</h4>
+    </div>
+
+{% endblock %}

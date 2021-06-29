@@ -1,0 +1,18 @@
+{% extends 'editor/layout.html' %}
+
+{% block body %}
+    <nav class="nav" id="navbar">
+        <a class="nav-link active">Home</a>
+    </nav>
+    <h1 class="latestposts">Latest Posts</h1>
+    {% for post in posts %}
+        
+        <a href = "{% url 'editor:post' post.id %}">
+            <div class = "postdiv">
+                <a href = "{% url 'editor:post' post.id %}"><h2 class="posttitle">{{post.title}}</h2></a>
+                <h4 class="postauthor">~{{ post.author }}</h4>
+                <p class="postcontent">{{ post.content }}[:200] ...<a href = "{% url 'editor:post' post.id %}">Read More</a></p>
+            </div>
+        </a>
+    {% endfor %}
+{% endblock %}
